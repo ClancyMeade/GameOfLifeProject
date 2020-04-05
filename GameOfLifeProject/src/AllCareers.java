@@ -27,6 +27,7 @@ public class AllCareers {
 		careerChoice.add(new Career("Science",20000,75000,true));
 		careerChoice.add(new Career("Sports",22000,12000,false));
 		careerChoice.add(new Career("Writer/Media",25000,12000,true));
+		careerChoice.add(new Career("Movie",23000,11000,true));
 	}
 
 }
