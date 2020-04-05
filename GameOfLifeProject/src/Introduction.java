@@ -29,6 +29,7 @@ public class Introduction
 						ArrayList<Card> playerTwoCards = new ArrayList<Card>();
 						Runner.players.add(new Player(playerOneName, 10000, 0, 0, playerTwoLifeTiles, playerTwoCards));
 						System.out.println();
+						System.out.println(); 
 
 						System.out.println("Okay, it's time to play...");
 
