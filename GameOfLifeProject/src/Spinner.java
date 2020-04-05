@@ -7,6 +7,7 @@ public class Spinner
 		
 		return spin; 
 		
+		
 	}
 
 }
