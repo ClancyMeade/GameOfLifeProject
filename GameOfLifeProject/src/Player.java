@@ -7,6 +7,7 @@ public class Player
 		private int totalMoney;
 		private int totalLoans;
 		private int placeOnBoard;
+		;
 		private ArrayList<LifeTile> playersLifeTiles = new ArrayList<LifeTile>();
 		private ArrayList<Card> playersCards = new ArrayList<Card>();
 
@@ -18,7 +19,10 @@ public class Player
 				placeOnBoard = p;
 				playersLifeTiles = pL;
 				playersCards = pC;
+				
 			}
+
+	
 
 		public String getName()
 			{
