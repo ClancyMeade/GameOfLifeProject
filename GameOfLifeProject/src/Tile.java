@@ -18,3 +18,4 @@ public abstract class Tile
 		this.type = type;
 	}
 }
+   
