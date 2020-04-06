@@ -33,18 +33,18 @@ public class Introduction
 
 						System.out.println("Okay, it's time to play...");
 
-						System.out.println("To begin the game, would you like to...");
+						System.out.println("To begin the game, " + playerOneName + ", would you like to...");
 
 						System.out.println("(1) Start your career");
 						System.out.println("(2) Go to college");
 
-						int pathChoice = userInput.nextInt();
+						int playerOneChoice = userInput.nextInt();
 
-						if (pathChoice == 1)
+						if (playerOneChoice == 1)
 							{
 								System.out.println("You have chosen to start your career!");
-								System.out.println(
-										"Now pick a job you will like to have to start your career...none of them require a degree");
+								System.out.println("Now pick a job you will like to have to start your career...");
+								System.out.println("None of these jobs require a degree");
 								System.out.println("Your choices are:");
 								System.out.println("(1) Artist");
 								System.out.println("(2) Salesperson");
@@ -53,9 +53,9 @@ public class Introduction
 								System.out.println("(5) Entertainer");
 								System.out.println("(6) Police Officer");
 
-								int jobChoice = userInput.nextInt();
+								int playerOneJobChoice = userInput.nextInt();
 
-								switch (jobChoice)
+								switch (playerOneJobChoice)
 									{
 									case 1:
 										{
@@ -99,12 +99,80 @@ public class Introduction
 										}
 									}
 
-							} else if (pathChoice == 2)
+							} else if (playerOneChoice == 2)
 							{
 								System.out.println("You have chosen to go to college!");
 
 							}
 
+						System.out.println("Now, " + playerTwoName + ", would you like to...");
+						System.out.println("(1) Start your career");
+						System.out.println("(2) Go to college");
+						int playerTwoChoice = userInput.nextInt();
+						if (playerTwoChoice == 1)
+							{
+								System.out.println("You have chosen to start your career!");
+								System.out.println(
+										"Now pick a job you will like to have to start your career...none of them require a degree");
+								System.out.println("Your choices are:");
+								System.out.println("(1) Artist");
+								System.out.println("(2) Salesperson");
+								System.out.println("(3) Athlete");
+								System.out.println("(4) Accountant");
+								System.out.println("(5) Entertainer");
+								System.out.println("(6) Police Officer");
+
+								int playerTwoJobChoice = userInput.nextInt();
+
+								switch (playerTwoJobChoice)
+									{
+									case 1:
+										{
+											System.out.println("You have chosen to become an Artist!");
+											System.out.println("Your starting salary will be: $50,000");
+											break;
+										}
+									case 2:
+										{
+											System.out.println("You have chosen to become a Salesperson!");
+											System.out.println("Your starting salary will be: $70,000");
+											break;
+
+										}
+									case 3:
+										{
+											System.out.println("You have chosen to become an Athlete!");
+											System.out.println("Your starting salary will be: $100,000");
+											break;
+										}
+									case 4:
+										{
+											System.out.println("You have chosen to become an Accountant!");
+											System.out.println("Your starting salary will be: $90,000");
+											break;
+
+										}
+									case 5:
+										{
+											System.out.println("You have chosen to become an Entertainer!");
+											System.out.println("Your starting salary will be: $80,000");
+											break;
+
+										}
+									case 6:
+										{
+											System.out.println("You have chosen to become a Police Officer!");
+											System.out.println("Your starting salary will be: $70,000");
+											break;
+
+										}
+									}
+
+							} else if (playerTwoChoice == 2)
+							{
+								System.out.println("You have chosen to go to college!");
+
+							}
 					}
 
 			}
