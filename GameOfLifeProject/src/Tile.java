@@ -7,7 +7,6 @@ public abstract class Tile
 	public Tile(String t)
 	{ 
 		type = t; 
-	
 	}
 
 	public String getType() {
