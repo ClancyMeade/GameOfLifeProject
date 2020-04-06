@@ -29,14 +29,34 @@ public class Introduction
 						ArrayList<Card> playerTwoCards = new ArrayList<Card>();
 						Runner.players.add(new Player(playerOneName, 10000, 0, 0, playerTwoLifeTiles, playerTwoCards));
 						System.out.println();
-						System.out.println(); 
+						System.out.println();
 
 						System.out.println("Okay, it's time to play...");
+
+						System.out.println("To begin the game, would you like to...");
+
+						System.out.println("(1) Start your career");
+						System.out.println("(2) Go to college");
+
+						int pathChoice = userInput.nextInt();
+
+						if (pathChoice == 1)
+							{
+								System.out.println("You have chosen to start your career!");
+								System.out.println("Now pick a Career Card to see what job you will have...");
+									
+								
+								
+							} 
+						else if (pathChoice == 2)
+							{
+
+							}
 
 					}
 
 			}
-		
-		//test
+
+		// test
 
 	}
