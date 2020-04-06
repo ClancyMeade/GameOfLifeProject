@@ -1,11 +1,12 @@
-import java.util.ArrayList;
-
 public class Career {
-private String name;
+	
+	private String name;
 	private int salary;
 	private int promoSalary;
 	private boolean degree;
-	public Career(String n,int s, int pS,boolean d) {
+	
+	public Career(String n,int s, int pS,boolean d) 
+	{
 		name=n;
 		salary=s;
 		promoSalary=pS;
