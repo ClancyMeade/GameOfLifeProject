@@ -43,13 +43,65 @@ public class Introduction
 						if (pathChoice == 1)
 							{
 								System.out.println("You have chosen to start your career!");
-								System.out.println("Now pick a Career Card to see what job you will have...");
-									
-								
-								
-							} 
-						else if (pathChoice == 2)
+								System.out.println(
+										"Now pick a job you will like to have to start your career...none of them require a degree");
+								System.out.println("Your choices are:");
+								System.out.println("(1) Artist");
+								System.out.println("(2) Salesperson");
+								System.out.println("(3) Athlete");
+								System.out.println("(4) Accountant");
+								System.out.println("(5) Entertainer");
+								System.out.println("(6) Police Officer");
+
+								int jobChoice = userInput.nextInt();
+
+								switch (jobChoice)
+									{
+									case 1:
+										{
+											System.out.println("You have chosen to become an Artist!");
+											System.out.println("Your starting salary will be: $50,000");
+											break;
+										}
+									case 2:
+										{
+											System.out.println("You have chosen to become a Salesperson!");
+											System.out.println("Your starting salary will be: $70,000");
+											break;
+
+										}
+									case 3:
+										{
+											System.out.println("You have chosen to become an Athlete!");
+											System.out.println("Your starting salary will be: $100,000");
+											break;
+										}
+									case 4:
+										{
+											System.out.println("You have chosen to become an Accountant!");
+											System.out.println("Your starting salary will be: $90,000");
+											break;
+
+										}
+									case 5:
+										{
+											System.out.println("You have chosen to become an Entertainer!");
+											System.out.println("Your starting salary will be: $80,000");
+											break;
+
+										}
+									case 6:
+										{
+											System.out.println("You have chosen to become a Police Officer!");
+											System.out.println("Your starting salary will be: $70,000");
+											break;
+
+										}
+									}
+
+							} else if (pathChoice == 2)
 							{
+								System.out.println("You have chosen to go to college!");
 
 							}
 
