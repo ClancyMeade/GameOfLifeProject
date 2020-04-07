@@ -8,11 +8,13 @@ public abstract class Tile
 		type = t; 
 	}
 
-	public String getType() {
+	public String getType() 
+	{
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(String type) 
+	{
 		this.type = type;
 	}
 	
