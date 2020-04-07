@@ -6,11 +6,12 @@ public class Introduction
 	{
 		static Scanner userInput = new Scanner(System.in);
 		static String playerOneName;
-		static String playerTwoName;
+		static String playerTwoName; 
 		static ArrayList<LifeTile> playerOneLifeTiles = new ArrayList<LifeTile>();
 		static ArrayList<Card> playerOneCards = new ArrayList<Card>();
 		static ArrayList<LifeTile> playerTwoLifeTiles = new ArrayList<LifeTile>();
 		static ArrayList<Card> playerTwoCards = new ArrayList<Card>();
+		
 
 		public static void greetPlayers()
 			{
@@ -31,7 +32,7 @@ public class Introduction
 						playerTwoName = userInput.next();
 						System.out.println("Hello " + playerTwoName);
 
-						Runner.players.add(new Player(playerOneName, 10000, 0, 0, playerTwoLifeTiles, playerTwoCards));
+						Runner.players.add(new Player(playerTwoName, 10000, 0, 0, playerTwoLifeTiles, playerTwoCards));
 						System.out.println();
 						System.out.println();
 
@@ -180,13 +181,5 @@ public class Introduction
 					}
 
 			}
-
-		public static void playGame()
-			{
-				System.out.println(playerOneName + ", spin for your first turn!");
-
-			}
-
-		// test
 
 	}
