@@ -11,7 +11,12 @@ public class Introduction
 		static ArrayList<Card> playerOneCards = new ArrayList<Card>();
 		static ArrayList<LifeTile> playerTwoLifeTiles = new ArrayList<LifeTile>();
 		static ArrayList<Card> playerTwoCards = new ArrayList<Card>();
+
 		
+		static boolean stillPlaying = true;
+		static String playerOneJobChoice;
+		static String playerTwoJobChoice;
+
 
 		public static void greetPlayers()
 			{
@@ -25,7 +30,8 @@ public class Introduction
 						playerOneName = userInput.next();
 						System.out.println("Hello " + playerOneName);
 
-						Runner.players.add(new Player(playerOneName, 10000, 0, 0, playerOneLifeTiles, playerOneCards));
+						Runner.players.add(new Player(playerOneName, playerOneJobChoice, 10000, 0, 0,
+								playerOneLifeTiles, playerOneCards));
 						System.out.println();
 
 						System.out.println("Player 2, what is your name?");
@@ -33,10 +39,17 @@ public class Introduction
 						System.out.println("Hello " + playerTwoName);
 
 						Runner.players.add(new Player(playerTwoName, 10000, 0, 0, playerTwoLifeTiles, playerTwoCards));
+
+						Runner.players.add(new Player(playerTwoName, playerTwoJobChoice, 10000, 0, 0,
+								playerTwoLifeTiles, playerTwoCards));
+
 						System.out.println();
 						System.out.println();
 
 						System.out.println("Okay, it's time to play...");
+
+						System.out.println("The player with the most money at the end of the game wins");
+						System.out.println("Both players start with $10,000");
 
 						System.out.println("To begin the game, " + playerOneName + ", would you like to...");
 
@@ -48,6 +61,8 @@ public class Introduction
 						if (playerOneChoice == 1)
 							{
 								System.out.println("You have chosen to start your career!");
+								System.out.println("Your board position will be set at 10");
+								Runner.players.get(0).setPlaceOnBoard(10);
 								System.out.println("Now pick a job you will like to have to start your career...");
 								System.out.println("None of these jobs require a degree");
 								System.out.println("Your choices are:");
@@ -58,46 +73,59 @@ public class Introduction
 								System.out.println("(5) Entertainer");
 								System.out.println("(6) Police Officer");
 
-								int playerOneJobChoice = userInput.nextInt();
+								System.out.println("Please type in the name of the job you would like");
+
+								playerOneJobChoice = userInput.nextLine();
 
 								switch (playerOneJobChoice)
 									{
-									case 1:
+									case "Artist":
 										{
 											System.out.println("You have chosen to become an Artist!");
+											Runner.players.get(0).setJobTitle("Artist");
 											System.out.println("Your starting salary will be: $50,000");
 											break;
 										}
-									case 2:
+									case "Salesperson":
 										{
 											System.out.println("You have chosen to become a Salesperson!");
+											Runner.players.get(0).setJobTitle("Salesperson");
+
 											System.out.println("Your starting salary will be: $70,000");
 											break;
 
 										}
-									case 3:
+									case "Athlete":
 										{
 											System.out.println("You have chosen to become an Athlete!");
+											Runner.players.get(0).setJobTitle("Athlete");
+
 											System.out.println("Your starting salary will be: $100,000");
 											break;
 										}
-									case 4:
+									case "Accountant":
 										{
 											System.out.println("You have chosen to become an Accountant!");
+											Runner.players.get(0).setJobTitle("Accountant");
+
 											System.out.println("Your starting salary will be: $90,000");
 											break;
 
 										}
-									case 5:
+									case "Entertainer":
 										{
 											System.out.println("You have chosen to become an Entertainer!");
+											Runner.players.get(0).setJobTitle("Entertainer");
+
 											System.out.println("Your starting salary will be: $80,000");
 											break;
 
 										}
-									case 6:
+									case "Police Officer":
 										{
 											System.out.println("You have chosen to become a Police Officer!");
+											Runner.players.get(0).setJobTitle("Police Officer");
+
 											System.out.println("Your starting salary will be: $70,000");
 											break;
 
@@ -117,8 +145,10 @@ public class Introduction
 						if (playerTwoChoice == 1)
 							{
 								System.out.println("You have chosen to start your career!");
-								System.out.println(
-										"Now pick a job you will like to have to start your career...none of them require a degree");
+								System.out.println("Your board position will be set at 10");
+								Runner.players.get(1).setPlaceOnBoard(10);
+								System.out.println("Now pick a job you will like to have to start your career...");
+								System.out.println("None of these jobs require a degree");
 								System.out.println("Your choices are:");
 								System.out.println("(1) Artist");
 								System.out.println("(2) Salesperson");
@@ -127,46 +157,58 @@ public class Introduction
 								System.out.println("(5) Entertainer");
 								System.out.println("(6) Police Officer");
 
-								int playerTwoJobChoice = userInput.nextInt();
+								playerTwoJobChoice = userInput.nextLine();
 
 								switch (playerTwoJobChoice)
 									{
-									case 1:
+									case "Artist":
 										{
 											System.out.println("You have chosen to become an Artist!");
+											Runner.players.get(1).setJobTitle("Artist");
+
 											System.out.println("Your starting salary will be: $50,000");
 											break;
 										}
-									case 2:
+									case "Salesperson":
 										{
 											System.out.println("You have chosen to become a Salesperson!");
+											Runner.players.get(1).setJobTitle("Salesperson");
+
 											System.out.println("Your starting salary will be: $70,000");
 											break;
 
 										}
-									case 3:
+									case "Athlete":
 										{
 											System.out.println("You have chosen to become an Athlete!");
+											Runner.players.get(1).setJobTitle("Athlete");
+
 											System.out.println("Your starting salary will be: $100,000");
 											break;
 										}
-									case 4:
+									case "Accountant":
 										{
 											System.out.println("You have chosen to become an Accountant!");
+											Runner.players.get(1).setJobTitle("Accountant");
+
 											System.out.println("Your starting salary will be: $90,000");
 											break;
 
 										}
-									case 5:
+									case "Entertainer":
 										{
 											System.out.println("You have chosen to become an Entertainer!");
+											Runner.players.get(1).setJobTitle("Entertainer");
+
 											System.out.println("Your starting salary will be: $80,000");
 											break;
 
 										}
-									case 6:
+									case "Police Officer":
 										{
 											System.out.println("You have chosen to become a Police Officer!");
+											Runner.players.get(1).setJobTitle("Police Officer");
+
 											System.out.println("Your starting salary will be: $70,000");
 											break;
 
@@ -181,5 +223,38 @@ public class Introduction
 					}
 
 			}
+
+
+
+		public static void playGame()
+			{
+				while (stillPlaying)
+					{
+						System.out.println(playerOneName + ", press enter to spin for your turn!");
+						String playerOneSpin = userInput.nextLine();
+						System.out.println("You spun for a total of " + Spinner.spinSpinner());
+						Runner.players.get(0)
+								.setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + Spinner.spinSpinner());
+
+						if (Runner.players.get(0).getTotalMoney() == 500000
+								|| Runner.players.get(0).getTotalMoney() == 500000)
+							{
+								System.out.println(
+										"You win the game of life! Now you can retire and live a happy, rich life");
+								stillPlaying = false;
+							}
+
+						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
+							{
+								System.out.println("You landed on a Money Tile! Now you will get paid for your job");
+
+							}
+
+					}
+
+			}
+
+		// test
+
 
 	}
