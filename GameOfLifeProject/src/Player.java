@@ -4,25 +4,35 @@ import java.util.List;
 public class Player
 	{
 		private String name;
+		private String jobTitle;
 		private int totalMoney;
 		private int totalLoans;
 		private int placeOnBoard;
-		;
+
 		private ArrayList<LifeTile> playersLifeTiles = new ArrayList<LifeTile>();
 		private ArrayList<Card> playersCards = new ArrayList<Card>();
 
-		public Player(String n, int tM, int tL, int p, ArrayList<LifeTile> pL, ArrayList<Card> pC)
+		public Player(String n, String jt, int tM, int tL, int p, ArrayList<LifeTile> pL, ArrayList<Card> pC)
 			{
 				name = n;
+				jobTitle = jt;
 				totalMoney = tM;
 				totalLoans = tL;
 				placeOnBoard = p;
 				playersLifeTiles = pL;
 				playersCards = pC;
-				
+
 			}
 
-	
+		public String getJobTitle()
+			{
+				return jobTitle;
+			}
+
+		public void setJobTitle(String jobTitle)
+			{
+				this.jobTitle = jobTitle;
+			}
 
 		public String getName()
 			{
