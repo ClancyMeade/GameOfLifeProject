@@ -38,7 +38,7 @@ public class Introduction
 						playerTwoName = userInput.next();
 						System.out.println("Hello " + playerTwoName);
 
-						Runner.players.add(new Player(playerTwoName, 10000, 0, 0, playerTwoLifeTiles, playerTwoCards));
+						
 
 						Runner.players.add(new Player(playerTwoName, playerTwoJobChoice, 10000, 0, 0,
 								playerTwoLifeTiles, playerTwoCards));
