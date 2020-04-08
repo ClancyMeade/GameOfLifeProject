@@ -93,5 +93,7 @@ public class Player
 			{
 				this.playersCards = playersCards;
 			}
-
+public void addMoney(int amount) {
+	totalMoney+=amount;
+}
 	}

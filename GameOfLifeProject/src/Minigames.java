@@ -5,36 +5,46 @@ public class Minigames {
 	public static void main(String[] args) {
 		//Minigames.guessTheNumber();
 //Minigames.math();
+		Minigames.randomChooser();
 	}
+	public static void randomChooser() {
+		int miniChooser=(int) ((Math.random()*8)+1);
+		System.out.println("The minigame you will be playing is... Number" + " " +miniChooser);
+		if(miniChooser==1) {
+			Minigames.guessTheNumber();
+		}if(miniChooser==2) {
+			Minigames.math();
+		}if(miniChooser==3) {
+				Minigames.trivia();
+		}if(miniChooser==4) {
+			Minigames.trivia2();
+		}if(miniChooser==5) {
+			Minigames.riddle();
+		}if(miniChooser==6) {
+			Minigames.javaQuestion();
+		}if(miniChooser==7) {
+			Minigames.music();
+		}if(miniChooser==8) {
+			Minigames.sports();
+		}
+	}
+	
 public static void guessTheNumber() {
-	int guess=(int) ((Math.random()*1)+10);
-	System.out.println("Hello good sir this minigame is all about guessing. Can you guess the number?");
-	System.out.println("you have three tries. if you win you get 50 thousand if you lose, you lose 50,000");
-	System.out.println("Are you ready?");
-	System.out.println("(1)=yes. (2)=no");
-	Scanner answer=new Scanner(System.in);
-	int choice= answer.nextInt();
-	Scanner numGuess = new Scanner(System.in);
-	int count=0;
-	System.out.println(choice);
-	if(choice == 1) {
+	int guess=(int) ((Math.random()*10)+1);
+	System.out.println("Hello good sir this minigame is all about guessing. Can you guess the number? it is inbetween 1-10");
+	Scanner answer= new Scanner(System.in);
+	System.out.println("Guess the number. good luck");
+	int rando=answer.nextInt();
+	if(rando!=guess) {
+		System.out.println("Oh No! you missed it");
 		
-		while(count<=3) {
-			int playerGuess = numGuess.nextInt();
-			if(playerGuess< guess) {
-				System.out.println("That number was too low try again");
-				count++;
-			}else if(playerGuess>guess) {
-				System.out.println("That number was too high, try again");
-				count++;
-				
-			}else if(count==3) {
-				System.out.println("Uh oh! you are out of tries, you lose 50K ");
-			}else {
-				System.out.println("Congrats! you win this minigame, you get 50K ");
-			}
-		}	
+	}else {
+		System.out.println("Wow! Beginners luck?");
+		Runner.players.get(PlayingGame.currentPlayer).addMoney(100000);
 	}
+	//test
+
+	
 	
 }
 public static void math() {
@@ -48,6 +58,7 @@ public static void math() {
 		
 	}else {
 		System.out.println("Holy Cow you are good at math you win 50K");
+		Runner.players.get(PlayingGame.currentPlayer).addMoney(50000);
 	}
 			
 }
@@ -59,7 +70,7 @@ public static void riddle() {
 String answer=riddler.nextLine();
 if(answer=="There are no stairs") {
 	System.out.println("Wow. this must have been some easy money");
-	
+	Runner.players.get(PlayingGame.currentPlayer).addMoney(30000);
 }else {
 	System.out.println("unlucky maybe read the first sentence ");
 }
@@ -72,8 +83,8 @@ public static void trivia() {
 	System.out.println("what did Emperor Claudius legalize at banquets?");
 	String answer=farts.nextLine();
 	if(answer=="farts") {
-		System.out.println("WHAT! how did you know that but hey 50K is 50K");
-		
+		System.out.println("WHAT! How did you know that?");
+		Runner.players.get(PlayingGame.currentPlayer).addMoney(75000);
 	}else {
 		System.out.println("Oh no, don't be sad this question was really hard");
 	}
@@ -85,6 +96,7 @@ public static void trivia2() {
 	String answer=decath.nextLine();
 	if(answer=="2007") {
 		System.out.println("Good job tech wiz! You know your dates");
+		Runner.players.get(PlayingGame.currentPlayer).addMoney(20000);
 	}else {
 		System.out.println("Darn but good try though");
 	}
@@ -97,7 +109,7 @@ public static void javaQuestion() {
 	String jav=os.nextLine();
 	if(jav=="no") {
 		System.out.println("See! I said it would be easy money");
-		
+		Runner.players.get(PlayingGame.currentPlayer).addMoney(20000);
 	}else {
 		System.out.println("Well guess who needs to read up on some java history");
 		
@@ -111,6 +123,7 @@ public static void sports() {
 String uru=cup.nextLine();
 if(uru=="Uruguay") {
 	System.out.println("Great! you know your stuff");
+	Runner.players.get(PlayingGame.currentPlayer).addMoney(50000);
 }else {
 	System.out.println("Darn soccer is a great sport and is the most played ");
 }
@@ -120,7 +133,14 @@ public static void music() {
 	Scanner led=new Scanner(System.in);
 	System.out.println("What was the name of the rock band formed by Jimmy Page");
 	String jim=led.nextLine();
-	if(jim=="Led Zepplin");
+	if(jim=="Led Zepplin") {
 	System.out.println("I head bang to that bro ");
+	Runner.players.get(PlayingGame.currentPlayer).addMoney(50000);
+	}else {
+		System.out.println("Darn you need to listen to some music");
+	}
+
 }
+
 }
+
