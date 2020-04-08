@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Introduction
 	{
 		static Scanner userInput = new Scanner(System.in);
+		static Scanner intInput = new Scanner(System.in);
 		static String playerOneName;
 		static String playerTwoName;
 		static ArrayList<LifeTile> playerOneLifeTiles = new ArrayList<LifeTile>();
@@ -20,7 +21,7 @@ public class Introduction
 			{
 				System.out.println(
 						"Hello, welcome to the Game Of Life. How many players will be playing today? \n(2)\n(3)\n(4)");
-				String numberOfPlayers = userInput.next();
+				String numberOfPlayers = intInput.next();
 
 				if (numberOfPlayers.contentEquals("2"))
 					{
@@ -52,7 +53,7 @@ public class Introduction
 						System.out.println("(1) Start your career");
 						System.out.println("(2) Go to college");
 
-						int playerOneChoice = userInput.nextInt();
+						int playerOneChoice = intInput.nextInt();
 
 						if (playerOneChoice == 1)
 							{
@@ -137,7 +138,7 @@ public class Introduction
 						System.out.println("Now, " + playerTwoName + ", would you like to...");
 						System.out.println("(1) Start your career");
 						System.out.println("(2) Go to college");
-						int playerTwoChoice = userInput.nextInt();
+						int playerTwoChoice = intInput.nextInt();
 						if (playerTwoChoice == 1)
 							{
 								System.out.println("You have chosen to start your career!");
@@ -152,6 +153,8 @@ public class Introduction
 								System.out.println("(4) Accountant");
 								System.out.println("(5) Entertainer");
 								System.out.println("(6) Police Officer");
+
+								System.out.println("Please type in the name of the job you would like to have");
 
 								playerTwoJobChoice = userInput.nextLine();
 
@@ -231,7 +234,7 @@ public class Introduction
 								.setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + Spinner.spinSpinner());
 
 						if (Runner.players.get(0).getTotalMoney() >= 500000
-								|| Runner.players.get(0).getTotalMoney() >= 500000)
+								|| Runner.players.get(1).getTotalMoney() >= 500000)
 							{
 								System.out.println(
 										"You win the game of life! Now you can retire and live a happy, rich life");
@@ -241,9 +244,10 @@ public class Introduction
 						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
 							{
 								System.out.println("You landed on a Money Tile! Now you will get paid for your job");
-								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 100000);
+								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 50000);
 
 							}
+						
 
 					}
 
