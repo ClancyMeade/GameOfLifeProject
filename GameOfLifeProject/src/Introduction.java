@@ -241,6 +241,7 @@ public class Introduction
 						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
 							{
 								System.out.println("You landed on a Money Tile! Now you will get paid for your job");
+								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 100000);
 
 							}
 
