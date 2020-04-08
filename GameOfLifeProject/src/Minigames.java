@@ -69,7 +69,7 @@ if(answer=="There are no stairs") {
 public static void trivia() {
 	System.out.println("This is all about really random trivia. do you know your weird facts?");
 	Scanner farts= new Scanner(System.in);
-	System.out.println("what did Emperor Claudius legalize at banquets");
+	System.out.println("what did Emperor Claudius legalize at banquets?");
 	String answer=farts.nextLine();
 	if(answer=="farts") {
 		System.out.println("WHAT! how did you know that but hey 50K is 50K");
@@ -77,5 +77,50 @@ public static void trivia() {
 	}else {
 		System.out.println("Oh no, don't be sad this question was really hard");
 	}
+}
+public static void trivia2() {
+	System.out.println("This is a trivia minigame");
+	Scanner decath= new Scanner(System.in);
+	System.out.println("When was the first Iphone released");
+	String answer=decath.nextLine();
+	if(answer=="2007") {
+		System.out.println("Good job tech wiz! You know your dates");
+	}else {
+		System.out.println("Darn but good try though");
+	}
+	
+}
+public static void javaQuestion() {
+	System.out.println("Hey what do ya know a question about java. This should be easy money");
+	Scanner os=new Scanner(System.in);
+	System.out.println("Is Java a type of OS");
+	String jav=os.nextLine();
+	if(jav=="no") {
+		System.out.println("See! I said it would be easy money");
+		
+	}else {
+		System.out.println("Well guess who needs to read up on some java history");
+		
+	}
+	
+}
+public static void sports() {
+	System.out.println("Lets see how well you know sports, specifically soccer");
+	Scanner cup=new Scanner(System.in);
+	System.out.println("Which team was the first to win the World Cup in 1930");
+String uru=cup.nextLine();
+if(uru=="Uruguay") {
+	System.out.println("Great! you know your stuff");
+}else {
+	System.out.println("Darn soccer is a great sport and is the most played ");
+}
+}
+public static void music() {
+	System.out.println("I want to rock! lets see how well you know it");
+	Scanner led=new Scanner(System.in);
+	System.out.println("What was the name of the rock band formed by Jimmy Page");
+	String jim=led.nextLine();
+	if(jim=="Led Zepplin");
+	System.out.println("I head bang to that bro ");
 }
 }
