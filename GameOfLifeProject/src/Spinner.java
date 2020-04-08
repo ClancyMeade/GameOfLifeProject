@@ -1,13 +1,16 @@
 
-public class Spinner
-	{
-		static int spin = (int) (Math.random() * 10) + 1;
 
-		public static int spinSpinner()
-			{
+public class Spinner 
+{
 
-				return spin;
 
-			}
+	
+	public static int spinSpinner()
+	{ 
+		int spin = (int)(Math.random()* 10) + 1; 
+		return spin; 
+		
+		
+  }
 
 	}
