@@ -6,17 +6,15 @@ public class Introduction
 	{
 		static Scanner userInput = new Scanner(System.in);
 		static String playerOneName;
-		static String playerTwoName; 
+		static String playerTwoName;
 		static ArrayList<LifeTile> playerOneLifeTiles = new ArrayList<LifeTile>();
 		static ArrayList<Card> playerOneCards = new ArrayList<Card>();
 		static ArrayList<LifeTile> playerTwoLifeTiles = new ArrayList<LifeTile>();
 		static ArrayList<Card> playerTwoCards = new ArrayList<Card>();
 
-		
 		static boolean stillPlaying = true;
 		static String playerOneJobChoice;
 		static String playerTwoJobChoice;
-
 
 		public static void greetPlayers()
 			{
@@ -37,8 +35,6 @@ public class Introduction
 						System.out.println("Player 2, what is your name?");
 						playerTwoName = userInput.next();
 						System.out.println("Hello " + playerTwoName);
-
-						Runner.players.add(new Player(playerTwoName, 10000, 0, 0, playerTwoLifeTiles, playerTwoCards));
 
 						Runner.players.add(new Player(playerTwoName, playerTwoJobChoice, 10000, 0, 0,
 								playerTwoLifeTiles, playerTwoCards));
@@ -224,8 +220,6 @@ public class Introduction
 
 			}
 
-
-
 		public static void playGame()
 			{
 				while (stillPlaying)
@@ -236,8 +230,8 @@ public class Introduction
 						Runner.players.get(0)
 								.setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + Spinner.spinSpinner());
 
-						if (Runner.players.get(0).getTotalMoney() == 500000
-								|| Runner.players.get(0).getTotalMoney() == 500000)
+						if (Runner.players.get(0).getTotalMoney() >= 500000
+								|| Runner.players.get(0).getTotalMoney() >= 500000)
 							{
 								System.out.println(
 										"You win the game of life! Now you can retire and live a happy, rich life");
@@ -247,6 +241,7 @@ public class Introduction
 						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
 							{
 								System.out.println("You landed on a Money Tile! Now you will get paid for your job");
+								
 
 							}
 
@@ -255,6 +250,5 @@ public class Introduction
 			}
 
 		// test
-
 
 	}
