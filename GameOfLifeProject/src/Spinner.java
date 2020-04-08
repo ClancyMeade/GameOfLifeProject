@@ -1,4 +1,5 @@
 
+
 public class Spinner 
 {
 
@@ -10,6 +11,6 @@ public class Spinner
 		return spin; 
 		
 		
-	}
+  }
 
-}
+	}
