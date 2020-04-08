@@ -36,7 +36,6 @@ public static void guessTheNumber() {
 		}	
 	}
 	
-		
 }
 public static void math() {
 	System.out.println("this minigame is all about math lets see how good you are at it");
