@@ -1,5 +1,5 @@
 
-public class MoneyTiles extends Tile
+/*public class MoneyTiles extends Tile
 	{
 	
 //	public MoneyTiles(String t)
@@ -8,4 +8,4 @@ public class MoneyTiles extends Tile
 //	}
 	
 		
-	}
+	}*/
