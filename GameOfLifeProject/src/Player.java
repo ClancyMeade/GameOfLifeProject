@@ -9,10 +9,10 @@ public class Player
 		private int totalLoans;
 		private int placeOnBoard;
 		
-		private ArrayList<LifeTile> playersLifeTiles = new ArrayList<LifeTile>();
+		private ArrayList<LifeTileCard> playersLifeTiles = new ArrayList<LifeTileCard>();
 		private ArrayList<Card> playersCards = new ArrayList<Card>();
 
-		public Player(String n, String jt, int tM, int tL, int p, ArrayList<LifeTile> pL, ArrayList<Card> pC)
+		public Player(String n, String jt, int tM, int tL, int p, ArrayList<LifeTileCard> pL, ArrayList<Card> pC)
 			{
 				name = n;
 				jobTitle = jt;
@@ -75,12 +75,12 @@ public class Player
 				Runner.screen.updateBoard();
 			}
 
-		public ArrayList<LifeTile> getPlayersLifeTiles()
+		public ArrayList<LifeTileCard> getPlayersLifeTiles()
 			{
 				return playersLifeTiles;
 			}
 
-		public void setPlayersLifeTiles(ArrayList<LifeTile> playersLifeTiles)
+		public void setPlayersLifeTiles(ArrayList<LifeTileCard> playersLifeTiles)
 			{
 				this.playersLifeTiles = playersLifeTiles;
 			}
