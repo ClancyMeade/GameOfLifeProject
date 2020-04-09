@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Introduction
 	{
 		static Scanner userInput = new Scanner(System.in);
+		static Scanner intInput = new Scanner(System.in);
 		static String playerOneName;
 		static String playerTwoName;
 		static ArrayList<LifeTile> playerOneLifeTiles = new ArrayList<LifeTile>();
@@ -18,10 +19,12 @@ public class Introduction
 
 		public static void greetPlayers()
 			{
+
 				
 				String[] s1 = {"Hello, welcome to the Game Of Life. How many players will be playing today?", "", "(2)", "(3)", "(4)"};
 				Runner.screen.updateMessage(s1);
 				String numberOfPlayers = userInput.next();
+
 
 				if (numberOfPlayers.contentEquals("2"))
 					{
@@ -52,10 +55,13 @@ public class Introduction
 
 						
 
+
 						String[] s3 = {"To begin the game, " + playerOneName + ", would you like to...", "(1) Start your career", "(2) Go to college"};
 						Runner.screen.updateMessage(s3);
 						
-						int playerOneChoice = userInput.nextInt();
+					
+						int playerOneChoice = intInput.nextInt();
+
 
 						if (playerOneChoice == 1)
 							{
@@ -149,6 +155,7 @@ public class Introduction
 
 							}
 
+
 						String[] s12 = {"Now, " + playerTwoName + ", would you like to...", "(1) Start your career", "(2) Go to college"};
 						Runner.screen.updateMessage(s12);
 						
@@ -173,6 +180,7 @@ public class Introduction
 							switch (playerTwoJobChoice)
 								{
 								case "1":
+
 									{
 										String[] s6 = {"You have chosen to become an Artist!", "Your starting salary will be: $50,000"};
 										Runner.screen.updateMessage(s6);
@@ -261,7 +269,7 @@ public class Introduction
 						Runner.players.get(0).setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + spin);
 
 						if (Runner.players.get(0).getTotalMoney() >= 500000
-								|| Runner.players.get(0).getTotalMoney() >= 500000)
+								|| Runner.players.get(1).getTotalMoney() >= 500000)
 							{
 							Runner.screen.updateMessage(
 										"You win the game of life! Now you can retire and live a happy, rich life");
@@ -270,10 +278,13 @@ public class Introduction
 
 						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
 							{
+
 								Runner.screen.updateMessage("You landed on a Money Tile! Now you will get paid for your job");
-								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 100000);
+								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 50000);
+
 
 							}
+						
 
 					}
 

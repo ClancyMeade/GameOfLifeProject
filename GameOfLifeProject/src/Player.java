@@ -94,6 +94,7 @@ public class Player
 			{
 				this.playersCards = playersCards;
 			}
+
 		public void moveForward(int spaces) {
 			int spacey = spaces + placeOnBoard;
 			if(spacey > 39) {
@@ -101,5 +102,10 @@ public class Player
 			}
 			setPlaceOnBoard(spacey);
 		}
+
+
+    public void addMoney(int amount) {
+	    totalMoney+=amount;
+    }
 
 	}
