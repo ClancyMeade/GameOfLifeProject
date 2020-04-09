@@ -11,9 +11,10 @@ public class Runner
 			{
 			
 
-			
-			 Introduction.greetPlayers();
-			 PlayingGame.play();
+				ReadTileData.fillBoard();
+				Screen screen = new Screen (35, 140, 10, 10, 23, 45, 10, 10, 10, "Welcome To The Game Of Life.", true);
+				Introduction.greetPlayers();
+				PlayingGame.play();
 
 
 			}
