@@ -37,6 +37,8 @@ public class PlayingGame
 			//do same thing, check space type and call methods
 			
 			
+			
+			
 		}
 	}
 

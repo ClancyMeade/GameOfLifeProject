@@ -247,7 +247,6 @@ public class Introduction
 								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 50000);
 
 							}
-						
 
 					}
 
