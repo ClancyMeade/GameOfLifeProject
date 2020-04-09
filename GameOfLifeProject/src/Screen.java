@@ -12,13 +12,15 @@ protected int boardWidth;
 protected int messageDistanceToTop;
 protected int messageDistanceToBottom;
 protected int messageDistanceToRight;
+protected String title;
 protected String[] screenMessage;
 protected String[] theBoard;
 protected String[] screen;
 protected boolean setupScreen;
 protected boolean setupBoard;
 
-	public Screen(int screen_Height, int screen_Width, int board_Distance_To_Left, int board_Distance_To_Right, int board_Height, int board_Width, int message_Distance_To_Top, int message_Distance_To_Bottom, int message_Distance_To_Right, String welcome_Message, boolean set_Screen_Size) {
+
+	public Screen(int screen_Height, int screen_Width, int board_Distance_To_Left, int board_Distance_To_Right, int board_Height, int board_Width, int message_Distance_To_Top, int message_Distance_To_Bottom, int message_Distance_To_Right, String theTitle, String welcome_Message, boolean set_Screen_Size) {
 		screenHeight = screen_Height;
 		screenWidth = screen_Width;
 		boardDistanceToLeft = board_Distance_To_Left;
@@ -28,6 +30,7 @@ protected boolean setupBoard;
 		messageDistanceToTop = message_Distance_To_Top; 
 		messageDistanceToBottom = message_Distance_To_Bottom;
 		messageDistanceToRight = message_Distance_To_Right;
+		title = theTitle;
 		setupScreen = true;
 		setupBoard = true;
 		if(set_Screen_Size) {
@@ -156,7 +159,7 @@ protected boolean setupBoard;
 			updateScreen();
 			}
 			setupScreen = false;
-		
+			pause(2.5);
 	}
 	
 	public void updateScreen() {
@@ -183,7 +186,7 @@ protected boolean setupBoard;
 		}
 		
 		int counter = 0;
-		for(int i = 0; i < screenHeight; i++) {
+		for(int i = 3; i < screenHeight; i++) {
 			if(i < boardBufferTop || i >= screenHeight - boardBufferBottom) {
 				tempScreen[i] = boardLeft + boardDistance + boardRight;
 			} 
@@ -206,7 +209,7 @@ protected boolean setupBoard;
 		}
 		
 		int counter1 = 0;
-		for(int i = 0; i < screenHeight; i++) {
+		for(int i = 3; i < screenHeight; i++) {
 			if(i < messageDistanceToTop || i >= screenHeight - messageDistanceToBottom) {
 				tempScreen[i] += messageDistance + messageRight;	
 			} 
@@ -215,8 +218,23 @@ protected boolean setupBoard;
 				counter1++;
 			}
 		}
+		int screenBuffer1 = (screenWidth - title.length()) / 2;	
+		String screenBufferL = "";
+		for(int i = 0; i < screenBuffer1; i++) {
+			screenBufferL += " ";
+		}
+		String screenBufferR = screenBufferL;
+		if(2 * screenBuffer1 + title.length() < screenWidth) {
+			screenBufferR += " ";
+			}
+		tempScreen[2] = screenBufferL + title + screenBufferR;
 		
-		
+		String spaceBuffer = "";
+		for(int i = 0; i < screenWidth; i++) {
+			spaceBuffer += " ";
+		}
+		tempScreen[1] = spaceBuffer;
+		tempScreen[0] = spaceBuffer;
 		screen = tempScreen;
 		
 		
@@ -259,6 +277,13 @@ protected boolean setupBoard;
 		String st = s.nextLine();
 		
 	}
-	
+	public static void pause(Double seconds) {
+		try {
+			Thread.sleep((long) (seconds * 1000));
+		} catch (InterruptedException e) {
+			
+			
+		}
+	}
 	
 }

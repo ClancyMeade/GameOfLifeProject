@@ -8,7 +8,7 @@ public class Player
 		private int totalMoney;
 		private int totalLoans;
 		private int placeOnBoard;
-
+		
 		private ArrayList<LifeTile> playersLifeTiles = new ArrayList<LifeTile>();
 		private ArrayList<Card> playersCards = new ArrayList<Card>();
 
@@ -72,6 +72,7 @@ public class Player
 		public void setPlaceOnBoard(int placeOnBoard)
 			{
 				this.placeOnBoard = placeOnBoard;
+				Runner.screen.updateBoard();
 			}
 
 		public ArrayList<LifeTile> getPlayersLifeTiles()
@@ -93,5 +94,12 @@ public class Player
 			{
 				this.playersCards = playersCards;
 			}
+		public void moveForward(int spaces) {
+			int spacey = spaces + placeOnBoard;
+			if(spacey > 39) {
+				spacey -= 40;
+			}
+			setPlaceOnBoard(spacey);
+		}
 
 	}
