@@ -19,111 +19,131 @@ public class Introduction
 
 		public static void greetPlayers()
 			{
-				System.out.println(
-						"Hello, welcome to the Game Of Life. How many players will be playing today? \n(2)\n(3)\n(4)");
-				String numberOfPlayers = intInput.next();
+
+				
+				String[] s1 = {"Hello, welcome to the Game Of Life. How many players will be playing today?", "", "(2)", "(3)", "(4)"};
+				Runner.screen.updateMessage(s1);
+				String numberOfPlayers = userInput.next();
+
 
 				if (numberOfPlayers.contentEquals("2"))
 					{
-						System.out.println("Great!\nPlayer 1, what is your name?");
+						
+						String[] s2 = {"Great!", "Player 1, what is your name?"};
+						Runner.screen.updateMessage(s2);
 						playerOneName = userInput.next();
-						System.out.println("Hello " + playerOneName);
+						Runner.screen.updateMessage("Hello " + playerOneName);
 
 						Runner.players.add(new Player(playerOneName, playerOneJobChoice, 10000, 0, 0,
 								playerOneLifeTiles, playerOneCards));
-						System.out.println();
+						
 
-						System.out.println("Player 2, what is your name?");
+						Runner.screen.updateMessage("Player 2, what is your name?");
 						playerTwoName = userInput.next();
-						System.out.println("Hello " + playerTwoName);
+						Runner.screen.updateMessage("Hello " + playerTwoName);
 
 						Runner.players.add(new Player(playerTwoName, playerTwoJobChoice, 10000, 0, 0,
 								playerTwoLifeTiles, playerTwoCards));
 
-						System.out.println();
-						System.out.println();
+						Runner.screen.updateBoard();
+						
 
-						System.out.println("Okay, it's time to play...");
+						Runner.screen.updateMessage("Okay, it's time to play...");
 
-						System.out.println("The player with the most money at the end of the game wins");
-						System.out.println("Both players start with $10,000");
+						Runner.screen.updateMessage("The player with the most money at the end of the game wins");
+						Runner.screen.updateMessage("Both players start with $10,000");
 
-						System.out.println("To begin the game, " + playerOneName + ", would you like to...");
+						
 
-						System.out.println("(1) Start your career");
-						System.out.println("(2) Go to college");
 
+						String[] s3 = {"To begin the game, " + playerOneName + ", would you like to...", "(1) Start your career", "(2) Go to college"};
+						Runner.screen.updateMessage(s3);
+						
+					
 						int playerOneChoice = intInput.nextInt();
+
 
 						if (playerOneChoice == 1)
 							{
-								System.out.println("You have chosen to start your career!");
-								System.out.println("Your board position will be set at 10");
+							
+								String[] s4 = {"You have chosen to start your career!", "Your board position will be set at 10"};
+								Runner.screen.updateMessage(s4);
 								Runner.players.get(0).setPlaceOnBoard(10);
-								System.out.println("Now pick a job you will like to have to start your career...");
-								System.out.println("None of these jobs require a degree");
-								System.out.println("Your choices are:");
-								System.out.println("(1) Artist");
-								System.out.println("(2) Salesperson");
-								System.out.println("(3) Athlete");
-								System.out.println("(4) Accountant");
-								System.out.println("(5) Entertainer");
-								System.out.println("(6) Police Officer");
+								
+								
+								
 
-								System.out.println("Please type in the name of the job you would like");
-
-								playerOneJobChoice = userInput.nextLine();
+								String[] s5 = {"Now pick a job you will like to have to start your career...", "None of these jobs require a degree",  "Your choices are:","(1) Artist", "(2) Salesperson" , "(3) Athlete", "(4) Accountant", "(5) Entertainer", "(6) Police Officer", "", "Please type in the number of the job you would like"};
+								Runner.screen.updateMessage(s5);
+								
+								String jobChoice = userInput.next();
+								playerOneJobChoice = jobChoice;
 
 								switch (playerOneJobChoice)
 									{
-									case "Artist":
+									case "1":
 										{
-											System.out.println("You have chosen to become an Artist!");
+											String[] s6 = {"You have chosen to become an Artist!", "Your starting salary will be: $50,000"};
+											Runner.screen.updateMessage(s6);
 											Runner.players.get(0).setJobTitle("Artist");
-											System.out.println("Your starting salary will be: $50,000");
 											break;
 										}
-									case "Salesperson":
+									case "2":
 										{
-											System.out.println("You have chosen to become a Salesperson!");
+											String[] s7 = {"You have chosen to become an Salesperson!", "Your starting salary will be: $70,000"};
+											Runner.screen.updateMessage(s7);
+											
 											Runner.players.get(0).setJobTitle("Salesperson");
 
-											System.out.println("Your starting salary will be: $70,000");
+										
 											break;
 
 										}
-									case "Athlete":
+									case "3":
 										{
-											System.out.println("You have chosen to become an Athlete!");
+											
+											String[] s8 = {"You have chosen to become an Athlete!", "Your starting salary will be: $100,000"};
+											Runner.screen.updateMessage(s8);
+											
+											
 											Runner.players.get(0).setJobTitle("Athlete");
 
-											System.out.println("Your starting salary will be: $100,000");
+											
 											break;
 										}
-									case "Accountant":
+									case "4":
 										{
-											System.out.println("You have chosen to become an Accountant!");
+											
+											String[] s9 = {"You have chosen to become an Accountant!", "Your starting salary will be: $90,000"};
+											Runner.screen.updateMessage(s9);
+											
 											Runner.players.get(0).setJobTitle("Accountant");
 
-											System.out.println("Your starting salary will be: $90,000");
+											
 											break;
 
 										}
-									case "Entertainer":
+									case "5":
 										{
-											System.out.println("You have chosen to become an Entertainer!");
+											
+											String[] s10 = {"You have chosen to become an Entertainer!", "Your starting salary will be: $80,000"};
+											Runner.screen.updateMessage(s10);
+											
 											Runner.players.get(0).setJobTitle("Entertainer");
 
-											System.out.println("Your starting salary will be: $80,000");
+											
 											break;
 
 										}
-									case "Police Officer":
+									case "6":
 										{
-											System.out.println("You have chosen to become a Police Officer!");
+											
+											String[] s11 = {"You have chosen to become an Police Officer!", "Your starting salary will be: $70,000"};
+											Runner.screen.updateMessage(s11);
+											
+											
 											Runner.players.get(0).setJobTitle("Police Officer");
 
-											System.out.println("Your starting salary will be: $70,000");
 											break;
 
 										}
@@ -131,94 +151,108 @@ public class Introduction
 
 							} else if (playerOneChoice == 2)
 							{
-								System.out.println("You have chosen to go to college!");
+								Runner.screen.updateMessage("You have chosen to go to college!");
 
 							}
 
-						System.out.println("Now, " + playerTwoName + ", would you like to...");
-						System.out.println("(1) Start your career");
-						System.out.println("(2) Go to college");
-						int playerTwoChoice = intInput.nextInt();
+
+						String[] s12 = {"Now, " + playerTwoName + ", would you like to...", "(1) Start your career", "(2) Go to college"};
+						Runner.screen.updateMessage(s12);
+						
+						int playerTwoChoice = userInput.nextInt();
+						
+						
 						if (playerTwoChoice == 1)
 							{
-								System.out.println("You have chosen to start your career!");
-								System.out.println("Your board position will be set at 10");
-								Runner.players.get(1).setPlaceOnBoard(10);
-								System.out.println("Now pick a job you will like to have to start your career...");
-								System.out.println("None of these jobs require a degree");
-								System.out.println("Your choices are:");
-								System.out.println("(1) Artist");
-								System.out.println("(2) Salesperson");
-								System.out.println("(3) Athlete");
-								System.out.println("(4) Accountant");
-								System.out.println("(5) Entertainer");
-								System.out.println("(6) Police Officer");
+							String[] s13 = {"You have chosen to start your career!", "Your board position will be set at 10"};
+							Runner.screen.updateMessage(s13);
+							Runner.players.get(1).setPlaceOnBoard(10);
+							
+							
+							
 
-								System.out.println("Please type in the name of the job you would like to have");
+							String[] s5 = {"Now pick a job you will like to have to start your career...", "None of these jobs require a degree",  "Your choices are:","(1) Artist", "(2) Salesperson" , "(3) Athlete", "(4) Accountant", "(5) Entertainer", "(6) Police Officer", "", "Please type in the number of the job you would like"};
+							Runner.screen.updateMessage(s5);
+							
+							String jobChoice2 = userInput.next();
+							playerTwoJobChoice = jobChoice2;
 
-								playerTwoJobChoice = userInput.nextLine();
+							switch (playerTwoJobChoice)
+								{
+								case "1":
 
-								switch (playerTwoJobChoice)
 									{
-									case "Artist":
-										{
-											System.out.println("You have chosen to become an Artist!");
-											Runner.players.get(1).setJobTitle("Artist");
-
-											System.out.println("Your starting salary will be: $50,000");
-											break;
-										}
-									case "Salesperson":
-										{
-											System.out.println("You have chosen to become a Salesperson!");
-											Runner.players.get(1).setJobTitle("Salesperson");
-
-											System.out.println("Your starting salary will be: $70,000");
-											break;
-
-										}
-									case "Athlete":
-										{
-											System.out.println("You have chosen to become an Athlete!");
-											Runner.players.get(1).setJobTitle("Athlete");
-
-											System.out.println("Your starting salary will be: $100,000");
-											break;
-										}
-									case "Accountant":
-										{
-											System.out.println("You have chosen to become an Accountant!");
-											Runner.players.get(1).setJobTitle("Accountant");
-
-											System.out.println("Your starting salary will be: $90,000");
-											break;
-
-										}
-									case "Entertainer":
-										{
-											System.out.println("You have chosen to become an Entertainer!");
-											Runner.players.get(1).setJobTitle("Entertainer");
-
-											System.out.println("Your starting salary will be: $80,000");
-											break;
-
-										}
-									case "Police Officer":
-										{
-											System.out.println("You have chosen to become a Police Officer!");
-											Runner.players.get(1).setJobTitle("Police Officer");
-
-											System.out.println("Your starting salary will be: $70,000");
-											break;
-
-										}
+										String[] s6 = {"You have chosen to become an Artist!", "Your starting salary will be: $50,000"};
+										Runner.screen.updateMessage(s6);
+										Runner.players.get(1).setJobTitle("Artist");
+										break;
 									}
+								case "2":
+									{
+										String[] s7 = {"You have chosen to become an Salesperson!", "Your starting salary will be: $70,000"};
+										Runner.screen.updateMessage(s7);
+										
+										Runner.players.get(1).setJobTitle("Salesperson");
 
-							} else if (playerTwoChoice == 2)
-							{
-								System.out.println("You have chosen to go to college!");
+									
+										break;
 
-							}
+									}
+								case "3":
+									{
+										
+										String[] s8 = {"You have chosen to become an Athlete!", "Your starting salary will be: $100,000"};
+										Runner.screen.updateMessage(s8);
+										
+										
+										Runner.players.get(1).setJobTitle("Athlete");
+
+										
+										break;
+									}
+								case "4":
+									{
+										
+										String[] s9 = {"You have chosen to become an Accountant!", "Your starting salary will be: $90,000"};
+										Runner.screen.updateMessage(s9);
+										
+										Runner.players.get(1).setJobTitle("Accountant");
+
+										
+										break;
+
+									}
+								case "5":
+									{
+										
+										String[] s10 = {"You have chosen to become an Entertainer!", "Your starting salary will be: $80,000"};
+										Runner.screen.updateMessage(s10);
+										
+										Runner.players.get(1).setJobTitle("Entertainer");
+
+										
+										break;
+
+									}
+								case "6":
+									{
+										
+										String[] s11 = {"You have chosen to become an Police Officer!", "Your starting salary will be: $70,000"};
+										Runner.screen.updateMessage(s11);
+										
+										
+										Runner.players.get(1).setJobTitle("Police Officer");
+
+										break;
+
+									}
+								}
+
+						} else if (playerTwoChoice == 2)
+						{
+							Runner.screen.updateMessage("You have chosen to go to college!");
+
+						}
 					}
 
 			}
@@ -227,24 +261,27 @@ public class Introduction
 			{
 				while (stillPlaying)
 					{
-						System.out.println(playerOneName + ", press enter to spin for your turn!");
+						Runner.screen.updateMessage(playerOneName + ", press enter to spin for your turn!");
 						String playerOneSpin = userInput.nextLine();
-						System.out.println("You spun for a total of " + Spinner.spinSpinner());
-						Runner.players.get(0)
-								.setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + Spinner.spinSpinner());
+						int spin = Spinner.spinSpinner();
+						Runner.screen.updateMessage("You spun for a total of " + spin);
+						
+						Runner.players.get(0).setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + spin);
 
 						if (Runner.players.get(0).getTotalMoney() >= 500000
 								|| Runner.players.get(1).getTotalMoney() >= 500000)
 							{
-								System.out.println(
+							Runner.screen.updateMessage(
 										"You win the game of life! Now you can retire and live a happy, rich life");
 								stillPlaying = false;
 							}
 
 						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
 							{
-								System.out.println("You landed on a Money Tile! Now you will get paid for your job");
+
+								Runner.screen.updateMessage("You landed on a Money Tile! Now you will get paid for your job");
 								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 50000);
+
 
 							}
 						
