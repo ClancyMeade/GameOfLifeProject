@@ -9,25 +9,75 @@ public class OptionsWhenYouLandOnTile
 	
 	public static void landOnTile()
 	{ 
-		if(Runner.board.get(place).getType().equals("MoneyTile"))
+		if(Runner.board.get(place).getType().equals("MiniGameTile"))
 		{
-			 
+			 landOnMiniGameTile(); 
 		}
 		
-		else if(Runner.board.get(place).getType().equals("BlueTile"))
+		else if(Runner.board.get(place).getType().equals("LifeTile"))
 		{ 
-			//still have to create other tiles that extend from tile 
+			landOnLifeTile(); 
+		}
+		
+		else if(Runner.board.get(place).getType().equals("NotOptionalTile"))
+		{ 
+			landOnNotOptionalTile(); 
+		}
+		
+		else if(Runner.board.get(place).getType().equals("OptionalTile"))
+		{ 
+			landOnOptionalTile(); 
+		}
+		
+		else if(Runner.board.get(place).getType().equals("GetMarriedTile"))
+		{ 
+			landOnGetMarriedTile(); 
+		}
+		
+		else if(Runner.board.get(place).getType().equals("HouseDeedTile"))
+		{ 
+			landOnHouseDeedTile(); 
 			
+		}
+		
+		else if(Runner.board.get(place).getType().equals("MoneyTile"))
+		{ 
+			landOnMoneyTile(); 
 		}
 	}
 	
 	
-	public static void landOnMoneyTile()
+	public static void landOnMiniGameTile()
 	{ 
 		
 	}
 	
-	public static void landOnBlueTile()
+	public static void landOnLifeTile()
+	{ 
+		
+	}
+	
+	public static void landOnNotOptionalTile()
+	{ 
+		
+	}
+	
+	public static void landOnOptionalTile()
+	{ 
+		
+	}
+	
+	public static void landOnGetMarriedTile() 
+	{ 
+		
+	}
+	
+	public static void landOnHouseDeedTile()
+	{ 
+		
+	}
+	
+	public static void landOnMoneyTile()
 	{ 
 		
 	}

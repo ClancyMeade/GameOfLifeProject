@@ -18,24 +18,21 @@ public class PlayingGame
 		{ 
 			
 			SwitchPlayers.switchCurrentPlayer();
+			 
 			
 			
 			System.out.println(Runner.players.get(currentPlayer).getName() + ", press enter to spin for your turn...");
-			int playerOneSpin = Spinner.spinSpinner(); 
+			int currentPlayerSpin = Spinner.spinSpinner(); 
 			userInput.nextLine(); 
-			System.out.println(Runner.players.get(currentPlayer).getName() + ", you spun a total of " + playerOneSpin + ".");
+			System.out.println(Runner.players.get(currentPlayer).getName() + ", you spun a total of " + currentPlayerSpin + ".");
+			int currentPlace = Runner.players.get(currentPlayer).getPlaceOnBoard();
+			Runner.players.get(currentPlayer).setPlaceOnBoard(currentPlace + currentPlayerSpin);
 			//you landed on: get place on board 
 			//call land on space method and execute what happens when you land on that type of space
 			
 			System.out.println();
-			SwitchPlayers.switchCurrentPlayer(); 
 		
-			System.out.println(Runner.players.get(currentPlayer).getName() + ", press enter to spin for your turn...");
-			int playerTwoSpin = Spinner.spinSpinner(); 
-			userInput.nextLine(); 
-			System.out.println(Runner.players.get(currentPlayer).getName() + ", you spun a total of " + playerTwoSpin + ".");
-			//do same thing, check space type and call methods
-			
+		
 			
 		}
 	}
