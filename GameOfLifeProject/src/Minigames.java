@@ -1,14 +1,7 @@
 import java.util.Scanner;
 
 public class Minigames
-	{
-
-		public static void main(String[] args)
-			{
-				// Minigames.guessTheNumber();
-//Minigames.math();
-				Minigames.randomChooser();
-			}
+{
 
 		public static void randomChooser()
 			{

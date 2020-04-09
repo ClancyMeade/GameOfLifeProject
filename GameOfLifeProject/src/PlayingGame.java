@@ -16,18 +16,23 @@ public class PlayingGame
 	{ 
 		while(playing)
 		{ 
-			
+			//switches player before the turn 
 			SwitchPlayers.switchCurrentPlayer();
-			 
-			
-			
-
+	
 			Runner.screen.updateMessage(Runner.players.get(currentPlayer).getName() + ", press enter to spin for your turn...");
+			
 			int currentPlayerSpin = Spinner.spinSpinner(); 
+			
 			userInput.nextLine(); 
+			
 			Runner.screen.updateMessage(Runner.players.get(currentPlayer).getName() + ", you spun a total of " + currentPlayerSpin + ".");
+			
 			int currentPlace = Runner.players.get(currentPlayer).getPlaceOnBoard();
+			
 			Runner.players.get(currentPlayer).setPlaceOnBoard(currentPlace + currentPlayerSpin);
+			
+			OptionsWhenYouLandOnTile.landOnTile();
+			
 			//you landed on: get place on board 
 			//call land on space method and execute what happens when you land on that type of space
 			

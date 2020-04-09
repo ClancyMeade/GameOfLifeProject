@@ -257,37 +257,37 @@ public class Introduction
 
 			}
 
-		public static void playGame()
-			{
-				while (stillPlaying)
-					{
-						Runner.screen.updateMessage(playerOneName + ", press enter to spin for your turn!");
-						String playerOneSpin = userInput.nextLine();
-						int spin = Spinner.spinSpinner();
-						Runner.screen.updateMessage("You spun for a total of " + spin);
-						
-						Runner.players.get(0).setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + spin);
+//		public static void playGame()
+//			{
+//				while (stillPlaying)
+//					{
+//						Runner.screen.updateMessage(playerOneName + ", press enter to spin for your turn!");
+//						String playerOneSpin = userInput.nextLine();
+//						int spin = Spinner.spinSpinner();
+//						Runner.screen.updateMessage("You spun for a total of " + spin);
+//						
+//						Runner.players.get(0).setPlaceOnBoard(Runner.players.get(0).getPlaceOnBoard() + spin);
+//
+//						if (Runner.players.get(0).getTotalMoney() >= 500000
+//								|| Runner.players.get(1).getTotalMoney() >= 500000)
+//							{
+//							Runner.screen.updateMessage(
+//										"You win the game of life! Now you can retire and live a happy, rich life");
+//								stillPlaying = false;
+//							}
+//
+//						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
+//							{
+//
+//								Runner.screen.updateMessage("You landed on a Money Tile! Now you will get paid for your job");
+//								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 50000);
+//
+//
+//							}
+//
+//					}
 
-						if (Runner.players.get(0).getTotalMoney() >= 500000
-								|| Runner.players.get(1).getTotalMoney() >= 500000)
-							{
-							Runner.screen.updateMessage(
-										"You win the game of life! Now you can retire and live a happy, rich life");
-								stillPlaying = false;
-							}
-
-						if (Runner.players.get(0).getPlaceOnBoard() % 2 == 0)
-							{
-
-								Runner.screen.updateMessage("You landed on a Money Tile! Now you will get paid for your job");
-								Runner.players.get(0).setTotalMoney(Runner.players.get(0).getTotalMoney() + 50000);
-
-
-							}
-
-					}
-
-			}
+//			}
 
 		// test
 

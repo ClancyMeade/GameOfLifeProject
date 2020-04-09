@@ -49,36 +49,38 @@ public class OptionsWhenYouLandOnTile
 	
 	public static void landOnMiniGameTile()
 	{ 
-		
+		Minigames.randomChooser();
 	}
 	
 	public static void landOnLifeTile()
 	{ 
-		
+		Runner.screen.updateMessage("You landed on a Life Tile! You get 1 life card.");
 	}
 	
 	public static void landOnNotOptionalTile()
 	{ 
-		
+		Runner.screen.updateMessage("You landed on an Not Optional Tile!");
 	}
 	
 	public static void landOnOptionalTile()
 	{ 
-		
+		Runner.screen.updateMessage("You landed on an Optional Tile!");
 	}
 	
 	public static void landOnGetMarriedTile() 
 	{ 
+		Runner.screen.updateMessage("You landed on the Get Married Tile! Time to get Married!");
 		
 	}
 	
 	public static void landOnHouseDeedTile()
 	{ 
+		Runner.screen.updateMessage("You landed on the House Tile! You get to buy a house, now drawing a card...");
 		
 	}
 	
 	public static void landOnMoneyTile()
 	{ 
-		
+		Runner.screen.updateMessage("You landed on a Pay Day Tile! Time to get paid!");
 	}
 }
