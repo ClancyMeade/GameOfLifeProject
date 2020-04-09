@@ -8,9 +8,9 @@ public class Introduction
 		static Scanner intInput = new Scanner(System.in);
 		static String playerOneName;
 		static String playerTwoName;
-		static ArrayList<LifeTile> playerOneLifeTiles = new ArrayList<LifeTile>();
+		static ArrayList<LifeTileCard> playerOneLifeTiles = new ArrayList<LifeTileCard>();
 		static ArrayList<Card> playerOneCards = new ArrayList<Card>();
-		static ArrayList<LifeTile> playerTwoLifeTiles = new ArrayList<LifeTile>();
+		static ArrayList<LifeTileCard> playerTwoLifeTiles = new ArrayList<LifeTileCard>();
 		static ArrayList<Card> playerTwoCards = new ArrayList<Card>();
 
 		static boolean stillPlaying = true;

@@ -1,11 +1,12 @@
 
-public class LifeTile
+public class LifeTileCard extends Card
  	{
 		String phrase; 
 		int amount;
 		
-		public LifeTile(String p, int a)
+		public LifeTileCard(String t, String p, int a)
 		{ 
+			super(t); 
 			phrase = p; 
 			amount = a; 
 		}
