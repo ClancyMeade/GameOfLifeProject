@@ -21,6 +21,7 @@ public class PlayingGame
 			 
 			
 			
+
 			System.out.println(Runner.players.get(currentPlayer).getName() + ", press enter to spin for your turn...");
 			int currentPlayerSpin = Spinner.spinSpinner(); 
 			userInput.nextLine(); 
@@ -33,6 +34,9 @@ public class PlayingGame
 			System.out.println();
 		
 		
+
+			
+			
 			
 		}
 	}
