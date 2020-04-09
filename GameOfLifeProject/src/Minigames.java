@@ -13,7 +13,7 @@ public class Minigames
 		public static void randomChooser()
 			{
 				int miniChooser = (int) ((Math.random() * 8) + 1);
-				System.out.println("The minigame you will be playing is... Number" + " " + miniChooser);
+				Runner.screen.updateMessage("The minigame you will be playing is... Number" + " " + miniChooser);
 				if (miniChooser == 1)
 					{
 						Minigames.guessTheNumber();
@@ -51,18 +51,18 @@ public class Minigames
 		public static void guessTheNumber()
 			{
 				int guess = (int) ((Math.random() * 10) + 1);
-				System.out.println(
-						"Hello good sir! This minigame is all about guessing. Can you guess the random number? It is in-between 1-10");
+				Runner.screen.updateMessage( "Hello good sir! This minigame is all about guessing. Can you guess the random number?"); 
+				Runner.screen.updateMessage("Can you guess the random number? It is in-between 1-10");
 				Scanner answer = new Scanner(System.in);
-				System.out.println("Guess the number. Good luck!");
+				Runner.screen.updateMessage("Guess the number. Good luck!");
 				int rando = answer.nextInt();
 				if (rando != guess)
 					{
-						System.out.println("Oh No! You missed it!");
+					Runner.screen.updateMessage("Oh No! You missed it!");
 
 					} else
 					{
-						System.out.println("Wow! Beginners luck?");
+						Runner.screen.updateMessage("Wow! Beginners luck?");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(100000);
 					}
 				// test
@@ -71,18 +71,18 @@ public class Minigames
 
 		public static void math()
 			{
-				System.out.println("This minigame is all about math! Let's see how good you are at it");
-				System.out.println("What is 1003*137");
+				Runner.screen.updateMessage("This minigame is all about math! Let's see how good you are at it");
+				Runner.screen.updateMessage("What is 1003*137");
 				Scanner mathAnswer = new Scanner(System.in);
-				System.out.println("Put your answer below");
+				Runner.screen.updateMessage("Put your answer below");
 				int correct = mathAnswer.nextInt();
 				if (correct != 137411)
 					{
-						System.out.println("Uh oh! That is incorrect! You lose money...");
+					Runner.screen.updateMessage("Uh oh! That is incorrect! You lose money...");
 
 					} else
 					{
-						System.out.println("Holy Cow! You are good at math! You win 50K");
+						Runner.screen.updateMessage("Holy Cow! You are good at math! You win 50K");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(50000);
 					}
 
@@ -90,69 +90,69 @@ public class Minigames
 
 		public static void riddle()
 			{
-				System.out.println("This minigame is all about riddles! Can you answer it correctly?");
-				System.out.println("Alright! Let's go...");
+				Runner.screen.updateMessage("This minigame is all about riddles! Can you answer it correctly?");
+				Runner.screen.updateMessage("Alright! Let's go...");
 				Scanner riddler = new Scanner(System.in);
-				System.out.println(
-						"There's a one-story house where everything is yellow. The walls are yellow. The doors are yellow. \nEven the furniture is yellow. What color are the stairs?");
+				Runner.screen.updateMessage("There's a one-story house where everything is yellow. The walls are yellow. ");
+				Runner.screen.updateMessage("The doors are yellow. Even the furniture is yellow. What color are the stairs?");
 				String answer = riddler.nextLine();
 				if (answer == "There are no stairs")
 					{
-						System.out.println("Wow! This must have been some easy money");
+					Runner.screen.updateMessage("Wow! This must have been some easy money");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(30000);
 					} else
 					{
-						System.out.println("Unlucky! Maybe read the first sentence again...");
+					Runner.screen.updateMessage("Unlucky! Maybe read the first sentence again...");
 					}
 
 			}
 
 		public static void trivia()
 			{
-				System.out.println("This is all about really random trivia. Do you know your weird facts?");
+				Runner.screen.updateMessage("This is all about really random trivia. Do you know your weird facts?");
 				Scanner farts = new Scanner(System.in);
-				System.out.println("What did Emperor Claudius legalize at banquets?");
+				Runner.screen.updateMessage("What did Emperor Claudius legalize at banquets?");
 				String answer = farts.nextLine();
 				if (answer == "farts")
 					{
-						System.out.println("WHAT! How did you know that??");
+					Runner.screen.updateMessage("WHAT! How did you know that??");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(75000);
 					} else
 					{
-						System.out.println("Oh no, don't be sad! This question was really hard...");
+					Runner.screen.updateMessage("Oh no, don't be sad! This question was really hard...");
 					}
 			}
 
 		public static void trivia2()
 			{
-				System.out.println("This is a trivia minigame!");
+				Runner.screen.updateMessage("This is a trivia minigame!");
 				Scanner decath = new Scanner(System.in);
-				System.out.println("When was the first IPhone released?");
+				Runner.screen.updateMessage("When was the first IPhone released?");
 				String answer = decath.nextLine();
 				if (answer == "2007")
 					{
-						System.out.println("Good job tech wiz! You know your dates");
+						Runner.screen.updateMessage("Good job tech wiz! You know your dates");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(20000);
 					} else
 					{
-						System.out.println("Darn, but good try though!");
+						Runner.screen.updateMessage("Darn, but good try though!");
 					}
 
 			}
 
 		public static void javaQuestion()
 			{
-				System.out.println("Hey, what do ya know? A question about java! This should be easy money...");
+				Runner.screen.updateMessage("Hey, what do ya know? A question about java! This should be easy money...");
 				Scanner os = new Scanner(System.in);
-				System.out.println("Is Java a type of OS?");
+				Runner.screen.updateMessage("Is Java a type of OS?");
 				String jav = os.nextLine();
 				if (jav == "no")
 					{
-						System.out.println("See! I said it would be easy money!");
+					Runner.screen.updateMessage("See! I said it would be easy money!");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(20000);
 					} else
 					{
-						System.out.println("Well I guess someone needs to read up on java history...");
+					Runner.screen.updateMessage("Well I guess someone needs to read up on java history...");
 
 					}
 
@@ -160,33 +160,33 @@ public class Minigames
 
 		public static void sports()
 			{
-				System.out.println("Let's see how well you know sports, specifically soccer");
+			Runner.screen.updateMessage("Let's see how well you know sports, specifically soccer");
 				Scanner cup = new Scanner(System.in);
-				System.out.println("Which team was the first to win the World Cup in 1930?");
+				Runner.screen.updateMessage("Which team was the first to win the World Cup in 1930?");
 				String uru = cup.nextLine();
 				if (uru == "Uruguay")
 					{
-						System.out.println("Great! You really know your stuff!");
+					Runner.screen.updateMessage("Great! You really know your stuff!");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(50000);
 					} else
 					{
-						System.out.println("Darn, soccer is a great sport and it is the most played...");
+						Runner.screen.updateMessage("Darn, soccer is a great sport and it is the most played...");
 					}
 			}
 
 		public static void music()
 			{
-				System.out.println("I want to rock! Let's see how well you know it!");
+			Runner.screen.updateMessage("I want to rock! Let's see how well you know it!");
 				Scanner led = new Scanner(System.in);
-				System.out.println("What was the name of the rock band formed by Jimmy Page");
+				Runner.screen.updateMessage("What was the name of the rock band formed by Jimmy Page");
 				String jim = led.nextLine();
 				if (jim == "Led Zeppelin")
 					{
-						System.out.println("I head bang to that bro!");
+					Runner.screen.updateMessage("I head bang to that bro!");
 						Runner.players.get(PlayingGame.currentPlayer).addMoney(50000);
 					} else
 					{
-						System.out.println("Darn, you need to listen to some music!");
+						Runner.screen.updateMessage("Darn, you need to listen to some music!");
 					}
 
 			}
